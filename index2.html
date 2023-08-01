@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dados pessoa</h1>
+    <button id="exibir">Exibir Pessoa</button>
+    <div id="resultado"></div>
+
+    <script>
+       
+const pessoa = {
+    nome: "Pedro",
+    idade: 21,
+    sexo: "Masculino",
+    endereco: "Rua pinheiros, 214"
+};
+
+
+const botaoExibir = document.querySelector("#exibir");
+
+botaoExibir.addEventListener("click", function() {
+    
+    const resultadoElement = document.getElementById("resultado");
+
+    resultadoElement.innerHTML = "";
+
+    let conteudoHTML = "";
+
+   for (const valor of Object.values(pessoa)) {
+       
+    conteudoHTML += `<p>${valor}</p>`;
+    }
+
+    resultadoElement.innerHTML = conteudoHTML;
+});
+
+</script>
+</body>
+</html>
+
+
+
