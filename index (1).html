@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exibir Produto</title>
+   </head>
+<body>
+    <h1>Detalhes do Produto</h1>
+    <button id="exibir">Exibir Produto</button>
+    <div id="resultado"></div>
+
+    <script>
+     const produto = {
+            item: "Relógio",
+            marca: "Casio",
+            preco: 139,
+            descricao: "Relógio com alarme, calendário, cronógrafo e iluminação noturna",
+            categoria: "Relógio de pulso digital"
+        };
+
+        const botaoExibir = document.querySelector("exibir");
+        const divResultado = document.getElementById("resultado");
+
+        botaoExibir.addEventListener("click", function () {
+            divResultado.innerHTML = "";
+
+            for (const propriedade in produto) {
+                const valor = produto[propriedade];
+                divResultado.innerHTML += "<p><strong>" + propriedade + ":</strong> " + valor + "</p>";
+            }
+        });
+    </script>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #resultado {
+        margin-top: 20px;
+    }
+    #resultado p {
+        margin: 5px 0;
+    }
+</style>
+</html>
